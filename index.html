@@ -18,15 +18,15 @@
 
 
     <!-- Open Graph / Facebook / iMessage -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://discount-promo-codes.com/">
+    <meta property="og:type" content="website"> <!-- This is the type of content (website) -->
+    <meta property="og:url" content="https://discount-promo-codes.com/"> <!-- This is the URL of the website -->
     <meta property="og:title" content="Discount Promo Codes - Simple & Fast Savings">
     <meta property="og:description" content="Find the latest working promo codes, discount codes, and referral links for services like InstaWP, Vultr, Digital Ocean, and more. All codes are validated and updated daily.">
     <meta property="og:image" content="https://discount-promo-codes.com/images/promo-preview.png">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="630"> <!-- This is the height of the image -->
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image"> <!-- This is the type of card (summary_large_image) -->
     <meta property="twitter:url" content="https://discount-promo-codes.com/">
     <meta name="twitter:title" content="Discount Promo Codes - Simple & Fast Savings">
     <meta name="twitter:description" content="Find the latest working promo codes, discount codes, and referral links for services like InstaWP, Vultr, Digital Ocean, and more. All codes are validated and updated daily.">
@@ -41,7 +41,7 @@
     <!-- Pure CSS - Replaces Tailwind CSS -->
     <style>
         /* --- Base & Reset --- */
-        :root {
+        :root { /* This is the root element for the CSS variables (used for the custom colors) */
             --slate-800: #1e293b;
             --slate-900: #0f172a;
             --slate-100: #f1f5f9;
@@ -560,27 +560,27 @@
                     dateSpan.textContent = `All codes validated and working as of ${monthName} ${year}`;
                 }
             } catch (e) {
-                console.error('Error setting dynamic date:', e);
+                console.error('Error setting dynamic date:', e); // Log the error to the console
                 // The static text "November 2025" will serve as a fallback
             }
 
             // --- LIVE SEARCH FILTER ---
-            const searchBox = document.getElementById('search-box');
-            const promoGrid = document.getElementById('promo-grid');
-            const promoCards = Array.from(promoGrid.querySelectorAll('.promo-card'));
-            const noResultsMessage = document.getElementById('no-results');
+            const searchBox = document.getElementById('search-box'); // Get the search box element
+            const promoGrid = document.getElementById('promo-grid'); // Get the promo grid element
+            const promoCards = Array.from(promoGrid.querySelectorAll('.promo-card')); // Get all promo cards
+            const noResultsMessage = document.getElementById('no-results'); // Get the no results message element
 
             searchBox.addEventListener('input', function () {
-                const searchTerm = searchBox.value.toLowerCase();
-                let visibleCards = 0;
+                const searchTerm = searchBox.value.toLowerCase(); // Get the search term
+                let visibleCards = 0; // Initialize the visible cards count
 
                 promoCards.forEach(card => {
-                    const cardText = card.textContent.toLowerCase();
-                    if (cardText.includes(searchTerm)) {
+                    const cardText = card.textContent.toLowerCase(); // Get the text content of the card
+                    if (cardText.includes(searchTerm)) { // Check if the search term is in the card text
                         card.classList.remove('hidden-transition');
-                        visibleCards++;
+                        visibleCards++; // Increment the visible cards count
                     } else {
-                        card.classList.add('hidden-transition');
+                        card.classList.add('hidden-transition'); // Add the hidden transition class to the card
                     }
                 });
                 // Show or hide the "No results" message
@@ -592,8 +592,8 @@
             });
 
             // --- CLICK-TO-COPY FUNCTIONALITY ---
-            const copyButtons = document.querySelectorAll('.copy-btn');
-            const copyTarget = document.getElementById('copy-target');
+            const copyButtons = document.querySelectorAll('.copy-btn'); // Get all copy buttons
+            const copyTarget = document.getElementById('copy-target'); // Get the copy target textarea
 
             copyButtons.forEach(button => {
                 button.addEventListener('click', function () {
@@ -638,7 +638,7 @@
                 copiedText.classList.remove('hidden');
 
                 // --- NEW ---
-                // If this is the JSX button, show the visit link
+                // If this is the JSX button, show the visit link 
                 if (button.dataset.code === 'ZGZRKI') {
                     const visitLink = document.getElementById('visit-jsx');
                     if (visitLink) {
@@ -646,7 +646,7 @@
                     }
                 }
                 // --- END NEW ---
-                // Revert back to original text after 2 seconds
+                // Revert back to original text after 2 seconds (2000 milliseconds)
                 setTimeout(() => {
                     originalText.classList.remove('hidden');
                     copiedText.classList.add('hidden');
